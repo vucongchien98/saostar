@@ -368,43 +368,7 @@ main {
 .swiper {
     padding-bottom: 50px !important;
 }
-.scroll-img {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-}
-.scroll-img::before, .scroll-img::after {
-    content: "";
-    position: absolute;
-    height: 150px;
-    width: 150px;
-}
-.scroll-img::after {
-    right: 0;
-    top: 0;
-    transform: rotateZ(180deg);
-}
-.scroll-img::before {
-    left: 0;
-    top: 0;
-}
-.scroll-img .sv-top {
-    display: flex;
-    animation: scroll 15s 0.5s linear infinite;
-    gap: 24px;
-}
 
-@keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(150px * 5));
-    }
-}
 .sec-videos {
     width: calc(var(--site_size) - 378px);
     overflow: hidden;
@@ -422,6 +386,33 @@ main {
     width: 468px;
     height: 550px;
 }
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .scroll-img {
+    width: 100%;
+  overflow: hidden;
+  }
+  
+  .marquee {
+    display: flex;
+    animation: marquee 8s linear;
+  }
+  
+  .marquee img {
+    flex-shrink: 0;
+  }
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
 
 .list-videos-youtube {
     display: flex;

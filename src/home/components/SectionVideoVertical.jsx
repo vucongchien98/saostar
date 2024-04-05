@@ -80,36 +80,18 @@ const listVideos = [
     videos: 'https://www.youtube.com/embed/Ry-IaDjzLic?si=rMM63wZ0Jg9u3baD',
   },
 ];
+const images = [
+  'https://ss-statics.saostar.vn/static/images/logo-saotv-marquee.svg',
+];
 
 const SectionVideoVertical = () => {
   return (
     <div className="sec-videos p-4 bg-secondary bg-opacity-10 rounded-4">
       <div className="scroll-img">
-        <div className="sv-top">
-          <div className="sv-top-logo">
-            <img
-              src="https://ss-statics.saostar.vn/static/images/logo-saotv-marquee.svg"
-              alt=""
-            />
-          </div>
-          <div className="sv-top-logo">
-            <img
-              src="https://ss-statics.saostar.vn/static/images/logo-saotv-marquee.svg"
-              alt=""
-            />
-          </div>
-          <div className="sv-top-logo">
-            <img
-              src="https://ss-statics.saostar.vn/static/images/logo-saotv-marquee.svg"
-              alt=""
-            />
-          </div>
-          <div className="sv-top-logo">
-            <img
-              src="https://ss-statics.saostar.vn/static/images/logo-saotv-marquee.svg"
-              alt=""
-            />
-          </div>
+        <div className="marquee">
+          {images.map((imageUrl, index) => (
+            <img key={index} src={imageUrl} alt={`Image ${index}`} />
+          ))}
         </div>
       </div>
       <div className="video-area mt-3">
